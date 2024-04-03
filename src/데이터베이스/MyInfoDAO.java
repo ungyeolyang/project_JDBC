@@ -95,8 +95,8 @@ public class MyInfoDAO {
         System.out.println("이름 : " + vo.getName());
         System.out.println("비밀번호 : " + vo.getPw() + " ");
         System.out.println("닉네임 : " + vo.getNickName() + " ");
-        System.out.println("주민등록번호 : " + vo.getJumin() + " ");  // 나이 나이로 변경 출력
-        System.out.println("나이 : "+ DateUtils.getAmericanAge("9506201234567")+ " ");
-        System.out.println("나이 : "+ DateUtils.gender_output("9506201234567")+ " ");
+        System.out.println("주민등록번호 : " + vo.getJumin().substring(0,10) + "*** ");// 뒷 4자리 블라인드
+        System.out.println("나이 : "+ DateUtils.getAmericanAge(vo.getJumin())+ " "); // 주민번호앞자리기준 나이환산
+        System.out.println("나이 : "+ DateUtils.gender_output(vo.getJumin())+ " "); // 주민번호뒷자리 기준 성별반환
     }
 }
