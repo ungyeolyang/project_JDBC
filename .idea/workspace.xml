@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14449bfe-5464-4065-b9b1-79db7b2c2316" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ojdbc11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_JDBC.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/데이터베이스/Common.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/데이터베이스/LogInDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/데이터베이스/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/데이터베이스/MemberVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/데이터베이스/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/데이터베이스/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/Common.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/MemberVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/MemberVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/MyInfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/MyInfoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/RegisterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/RegisterDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +30,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -44,6 +44,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -52,14 +53,20 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/dev/work_project/project_JDBC",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="데이터베이스" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-11.0.21-corretto-11.0.21-4caba194b151-9f4ef98c" />
+        <option value="jdk-11.0.22-corretto-11.0.22-4caba194b151-868cef46" />
       </set>
     </attachedChunks>
   </component>
@@ -73,5 +80,16 @@
       <updated>1712107431032</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/데이터베이스/MyInfoDAO.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

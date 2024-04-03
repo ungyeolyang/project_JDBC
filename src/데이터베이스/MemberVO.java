@@ -6,9 +6,9 @@ public class MemberVO {
     private String pw;
     private String name;
     private String nickName;
-    private Integer jumin;
+    private String jumin;
 
-    public MemberVO(String id, String pw, String name, String nickName, Integer jumin) {
+    public MemberVO(String id, String pw, String name, String nickName, String jumin) {
         this.id = id;
         this.pw = pw;
         this.name = name;
@@ -52,11 +52,11 @@ public class MemberVO {
         this.nickName = nickName;
     }
 
-    public Integer getJumin() {
+    public String getJumin() {
         return jumin;
     }
 
-    public void setJumin(Integer jumin) {
+    public void setJumin(String jumin) {
         this.jumin = jumin;
     }
 }

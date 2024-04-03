@@ -14,7 +14,7 @@ public class MyInfoDAO {
         try {
             conn = Common.getConnection();
             stmt = conn.createStatement();
-            String query = "SELECT RPAD(SUBSTR(USER_PW,1,3),LENGTH (USER_PW),'*') AS \"USER_PW\",USER_NAME,USER_NICK FROM MEMBER WHERE USER_ID = '" + Main.myId + "'";
+            String query = "SELECT RPAD(SUBSTR(USER_PW,1,3),LENGTH (USER_PW),'*') AS \"USER_PW\",USER_NAME,USER_NICK, USER_JUMIN FROM MEMBER WHERE USER_ID = '" + Main.myId + "'";
             rs = stmt.executeQuery(query);
 
             while (rs.next()) {
@@ -27,6 +27,7 @@ public class MyInfoDAO {
                 vo.setName(name);
                 vo.setPw(pw);
                 vo.setNickName(nickName);
+                vo.setJumin(jumin);
             }
             Common.close(rs);
             Common.close(stmt);
@@ -94,5 +95,8 @@ public class MyInfoDAO {
         System.out.println("이름 : " + vo.getName());
         System.out.println("비밀번호 : " + vo.getPw() + " ");
         System.out.println("닉네임 : " + vo.getNickName() + " ");
+        System.out.println("주민등록번호 : " + vo.getJumin() + " ");  // 나이 나이로 변경 출력
+        System.out.println("나이 : "+ DateUtils.getAmericanAge("9506201234567")+ " ");
+        System.out.println("나이 : "+ DateUtils.gender_output("9506201234567")+ " ");
     }
 }

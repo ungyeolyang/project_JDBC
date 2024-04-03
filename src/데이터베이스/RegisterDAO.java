@@ -46,14 +46,14 @@ public class RegisterDAO {
         return true;
     }
 
-    public void memberInsert(String id, String pw, String name ,String nickName) {
+    public void memberInsert(String id, String pw, String name ,String nickName, String jumin) {
         try {
             conn = Common.getConnection();
             stmt = conn.createStatement();
 
             String query = "INSERT INTO MEMBER VALUES ("
                     + "'" + id + "'" + ", " + "'" + pw + "'" + ", " + "'" +
-                    name + "'" + ", " + "'" + nickName + "'" + ")";
+                    name + "'" + ", " + "'" + nickName + "'" + ", " + jumin + ")";
 
             int ret = stmt.executeUpdate(query);
             System.out.println("Return : " + ret);

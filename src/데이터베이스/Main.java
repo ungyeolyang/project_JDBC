@@ -34,29 +34,35 @@ public class Main {
                     pw = sc.next().trim();
                     if (!logIn.logIn(id, pw)) continue;
                     myId = id;
-                    myNickName = LogInDAO.nickName;
+                    myNickName = LogInDAO.nickName; //
                     break;
                 case 2: // 회원가입 입력 단
                     RegisterDAO register = new RegisterDAO();
                     System.out.println("회원가입 정보를 입력 하세요.");
                     System.out.print("이름 : ");
                     String name = sc.next().trim();
+                    String input_jumin; //위치 검토필요
+                    String  input_id;
+                    String input_pw;
                     while (true) {
                         System.out.print("주민등록번호 : ");
-                        String jumin = sc.next().trim();
-                        if(!register.checkJumin(jumin)) continue;
+                        input_jumin = sc.next().trim();
+                        myJumin = input_jumin;
+                        if (!register.checkJumin(input_jumin)) continue;
                         break;
                     }
                     while (true) {
                         System.out.print("아이디 : ");
-                        String id = sc.next().trim();
-                        if(!register.checkId(id)) continue;
+                        input_id = sc.next().trim();
+                        id= input_id;
+                        if (!register.checkId(input_id)) continue;
                         break;
                     }
                     while (true) {
                         System.out.print("비밀번호 : ");
-                        String pw = sc.next().trim();
-                        if (pw.length() <= 3) {
+                        input_pw = sc.next().trim();
+                        pw = input_pw;
+                        if (input_pw.length() <= 3) {
                             System.out.println("비밀번호는 4자 이상이어야 합니다.");
                             continue;
                         }
@@ -64,12 +70,13 @@ public class Main {
                     }
                     System.out.print("닉네임 : ");
                     String nickName = sc.next().trim();
-                    register.memberInsert(id,pw,name,nickName);
+                    register.memberInsert(input_id, input_pw, name, nickName, input_jumin); //rsgister id, pw 변수를 main static id, pw 전역 변수를 인식하는 오류발생으로 id,pw 매개변수명 변경하였습니다.
                     break;
                 case 3:
                     System.out.println("메뉴를 종료 합니다");
                     return;
-                default: break;
+                default:
+                    break;
             }
 
             if (myId != null) {
