@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14449bfe-5464-4065-b9b1-79db7b2c2316" name="Changes" comment="회원탈퇴시 쓴 댓글도 삭제하도록 변경">
+    <list default="true" id="14449bfe-5464-4065-b9b1-79db7b2c2316" name="Changes" comment="개인정보 출력시 주민등록번호 깔끔하게 출력">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/데이터베이스/MyInfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/MyInfoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/SearchIdDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/SearchIdDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,12 +89,21 @@
       <option name="project" value="LOCAL" />
       <updated>1712213070836</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="개인정보 출력시 주민등록번호 깔끔하게 출력">
+      <option name="closed" value="true" />
+      <created>1712213699768</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712213699768</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="회원탈퇴시 쓴 댓글도 삭제하도록 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="회원탈퇴시 쓴 댓글도 삭제하도록 변경" />
+    <MESSAGE value="개인정보 출력시 주민등록번호 깔끔하게 출력" />
+    <option name="LAST_COMMIT_MESSAGE" value="개인정보 출력시 주민등록번호 깔끔하게 출력" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -105,13 +115,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/데이터베이스/Main.java</url>
-          <line>263</line>
+          <line>260</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/데이터베이스/Main.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

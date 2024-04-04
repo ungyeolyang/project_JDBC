@@ -75,9 +75,8 @@ public class Main {
                     break;
                 case 3: // 회원정보 찾기 입력단
                     SearchIdDAO search = new SearchIdDAO();
-                    TreeSet<MemberVO> mSet = new TreeSet<>();
                     while (true){
-                        System.out.println("[1]아이디 찾기 [2]비밀번호찾기");
+                        System.out.println("[1]아이디 찾기 [2]비밀번호찾기 [3]뒤로가기");
                         int selectmenu= sc.nextInt();
                         switch (selectmenu){
                             case 1:
@@ -85,8 +84,8 @@ public class Main {
                                 String input_name = sc.next().trim();
                                 System.out.println("가입 시 등록한 주민등록번호를 입력하세요 :");
                                 String input_jumin2 = sc.next().trim();
-                                mSet = search.searcId(selectmenu,input_name,input_jumin2);
-                                if(mSet.isEmpty()) continue;
+                                if(search.searchId(input_name,input_jumin2) == null) continue;
+                                search.printMemberId(search.searchId(input_name,input_jumin2));
                                 break;
                             case 2:
                                 System.out.println("가입 시 등록한 아이디를 입력하세요 : ");
@@ -95,17 +94,15 @@ public class Main {
                                 String input_name2 = sc.next().trim();
                                 System.out.println("가입 시 등록한 주민등록번호를 입력하세요 :");
                                 String input_jumin3 = sc.next().trim(); // 변수명 검토 필요
-                                mSet = search.searcPw(selectmenu,input_id2,input_name2,input_jumin3);
-                                if(mSet.isEmpty()) continue;
+                                if(search.searcPw(input_id2,input_name2,input_jumin3) == null) continue;
+                                search.printMemberPW(search.searcPw(input_id2,input_name2,input_jumin3));
                                 break;
                             case 3:
                                 break;
-                            default:
                         }
                         break;
                     }
-                    if(mSet == null) break;
-                    search.printMemberId(mSet);
+                    break;
                 case 4:
                     System.out.println("메뉴를 종료 합니다");
                     return;
