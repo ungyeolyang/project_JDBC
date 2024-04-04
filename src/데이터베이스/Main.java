@@ -22,7 +22,7 @@ public class Main {
             System.out.println("┌" + "- ".repeat(title.length()) + "-" + "┐");
             System.out.println("│   " + title + "   │");
             System.out.println("└" + "- ".repeat(title.length()) + "-" + "┘");
-            System.out.println("[1]로그인 [2]회원가입 [3]종료");
+            System.out.println("[1]로그인 [2]회원가입 [3]회원정보 찾기 [4]종료");
             int sel = sc.nextInt();
             switch (sel) {
                 case 1: // 로그인 입력 단
@@ -41,14 +41,15 @@ public class Main {
                     System.out.println("회원가입 정보를 입력 하세요.");
                     System.out.print("이름 : ");
                     String name = sc.next().trim();
-                    String input_jumin; //위치 검토필요
+                    String input_jumin1; //위치 검토필요
                     String  input_id;
                     String input_pw;
                     while (true) {
                         System.out.print("주민등록번호 : ");
-                        input_jumin = sc.next().trim();
-                        myJumin = input_jumin;
-                        if (!register.checkJumin(input_jumin)) continue;
+                        input_jumin1 = sc.next().trim();
+                        myJumin = input_jumin1;
+
+                        if (!register.checkJumin(input_jumin1)) continue;
                         break;
                     }
                     while (true) {
@@ -70,15 +71,48 @@ public class Main {
                     }
                     System.out.print("닉네임 : ");
                     String nickName = sc.next().trim();
-                    register.memberInsert(input_id, input_pw, name, nickName, input_jumin); //rsgister id, pw 변수를 main static id, pw 전역 변수를 인식하는 오류발생으로 id,pw 매개변수명 변경하였습니다.
+                    register.memberInsert(input_id, input_pw, name, nickName, input_jumin1); //rsgister id, pw 변수를 main static id, pw 전역 변수를 인식하는 오류발생으로 id,pw 매개변수명 변경하였습니다.
                     break;
-                case 3:
+                case 3: // 회원정보 찾기 입력단
+                    SearchIdDAO search = new SearchIdDAO();
+                    TreeSet<MemberVO> mSet = new TreeSet<>();
+                    while (true){
+                        System.out.println("[1]아이디 찾기 [2]비밀번호찾기");
+                        int selectmenu= sc.nextInt();
+                        switch (selectmenu){
+                            case 1:
+                                System.out.println("가입 시 등록한 이름을 입력 하세요 : ");
+                                String input_name = sc.next().trim();
+                                System.out.println("가입 시 등록한 주민등록번호를 입력하세요 :");
+                                String input_jumin2 = sc.next().trim();
+                                mSet = search.searcId(selectmenu,input_name,input_jumin2);
+                                if(mSet.isEmpty()) continue;
+                                break;
+                            case 2:
+                                System.out.println("가입 시 등록한 아이디를 입력하세요 : ");
+                                String input_id2 = sc.next().trim();
+                                System.out.println("가입 시 등록한 이름을 입력 하세요 : ");
+                                String input_name2 = sc.next().trim();
+                                System.out.println("가입 시 등록한 주민등록번호를 입력하세요 :");
+                                String input_jumin3 = sc.next().trim(); // 변수명 검토 필요
+                                mSet = search.searcPw(selectmenu,input_id2,input_name2,input_jumin3);
+                                if(mSet.isEmpty()) continue;
+                                break;
+                            case 3:
+                                break;
+                            default:
+                        }
+                        break;
+                    }
+                    if(mSet == null) break;
+                    search.printMemberId(mSet);
+                case 4:
                     System.out.println("메뉴를 종료 합니다");
                     return;
                 default:
                     break;
             }
-
+            
             if (myId != null) {
                 mainSelect();
             }
@@ -192,7 +226,7 @@ public class Main {
                         int sel5 = sc.nextInt();
                         switch (sel5) {
                             case 1: // 수정
-                                System.out.println("[1]이름, [2]비밀번호,[3]닉네임, [4]주민번호 [5]돌아가기");
+                                System.out.println("[1]이름, [2]비밀번호,[3]닉네임, [4]주민등록번호 [5]돌아가기");
                                 int sel6 = sc.nextInt();
                                 switch (sel6) {
                                     case 1:

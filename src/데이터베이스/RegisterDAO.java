@@ -53,7 +53,7 @@ public class RegisterDAO {
 
             String query = "INSERT INTO MEMBER VALUES ("
                     + "'" + id + "'" + ", " + "'" + pw + "'" + ", " + "'" +
-                    name + "'" + ", " + "'" + nickName + "'" + ", " + jumin + ")";
+                    name + "'" + ", " + "'" + nickName + "'" + ", LPAD(" + jumin + " , 13 ,'0'))";
 
             int ret = stmt.executeUpdate(query);
             System.out.println("Return : " + ret);
