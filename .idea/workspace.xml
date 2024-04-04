@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14449bfe-5464-4065-b9b1-79db7b2c2316" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/데이터베이스/SearchIdDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/데이터베이스/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/데이터베이스/RegisterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/RegisterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/데이터베이스/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/Common.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/MyInfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/MyInfoDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

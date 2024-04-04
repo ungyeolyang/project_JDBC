@@ -82,6 +82,9 @@ public class MyInfoDAO {
             String query = "DELETE FROM MEMBER WHERE USER_ID = '" + Main.myId + "'";
             int ret = stmt.executeUpdate(query);
             System.out.println("Return : " + ret);
+            String query1 = "DELETE FROM BOARD WHERE USER_ID = '" + Main.myId + "'";
+            int ret1 = stmt.executeUpdate(query1);
+            System.out.println("Return : " + ret1);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -97,6 +100,6 @@ public class MyInfoDAO {
         System.out.println("닉네임 : " + vo.getNickName() + " ");
         System.out.println("주민등록번호 : " + vo.getJumin().substring(0,10) + "*** ");// 뒷 4자리 블라인드
         System.out.println("나이 : "+ DateUtils.getAmericanAge(vo.getJumin())+ " "); // 주민번호앞자리기준 나이환산
-        System.out.println("나이 : "+ DateUtils.gender_output(vo.getJumin())+ " "); // 주민번호뒷자리 기준 성별반환
+        System.out.println("성별 : "+ DateUtils.gender_output(vo.getJumin())+ " "); // 주민번호뒷자리 기준 성별반환
     }
 }
