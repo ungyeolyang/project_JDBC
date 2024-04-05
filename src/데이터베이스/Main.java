@@ -197,10 +197,10 @@ public class Main {
                                     }
                                     System.out.print("추천할 번호를 입력하세요 : ");
                                     int goodnum =sc.nextInt();
-                                    if(!board.checkCommentGood(goodnum)) continue;
+                                    if(!board.checkCommentGood(goodnum)) {System.out.println("이미 추천한 댓글입니다."); continue;}
                                     else if(!board.checkComment(goodnum,str)) continue;
                                     else board.commentGood(goodnum);
-                                    board.updateGoodBoard(board.checkGood(goodnum),goodnum);
+                                    board.updateGoodBoard(goodnum,board.checkGood(goodnum));
                                     break;
                                 case 3:
                                     if(!board.checkComment(str)) continue;
@@ -208,15 +208,19 @@ public class Main {
                                         System.out.println("본인이 작성한 댓글입니다.");
                                         continue;
                                     }
-                                    System.out.print("신고할 번호를 입력하세요 : ");
+                                    System.out.print("비추천할 번호를 입력하세요 : ");
                                     int badnum =sc.nextInt();
-                                    if(!board.checkCommentBad(badnum)) continue;
+                                    if(!board.checkCommentBad(badnum)) {
+                                        System.out.println("이미 비추천한 댓글입니다.");
+                                        continue;
+                                    }
                                     else if(!board.checkComment(badnum,str)) continue;
                                     else board.commentBad(badnum);
-                                    board.updateBadBoard(board.checkBad(badnum),badnum);
+                                    board.updateBadBoard(badnum,board.checkBad(badnum));
                                     if(board.checkBad(badnum) > 2) {
                                         board.deleteBad(badnum);
-                                        System.out.println("신고누적으로 댓글이 삭제되었습니다.");
+                                        board.deleteGood(badnum);
+                                        System.out.println("비추천 누적으로 댓글이 삭제되었습니다.");
                                         board.deleteContent(badnum);
                                     } // 신고 3번이면 삭제
                                     break;
@@ -279,15 +283,7 @@ public class Main {
                                         Main.myNickName = nickName;
                                         break;
                                     case 4:
-                                        while (true) {
-                                            System.out.print("주민등록번호 : ");
-                                            String jumin = sc.next().trim();
-                                            // 주민등록번호 중복 조회 기능 추가해야 함
-                                            myInfo.updateMyInfo(sel6, jumin);
-                                            break;
-                                        }
                                         break;
-                                        // 돌아가기는 어떻게 구현 되는지
                                 }
                                 break;
                             case 2: // 탈퇴
@@ -315,17 +311,43 @@ public class Main {
                     continue;
                 case 2: // 작성한 댓글
                     BoardDAO board = new BoardDAO();
-                    List<BoardVO> list= board.searchBoard();
-                    board.printMyContent(list);
-                    if(list.isEmpty()) {System.out.println("작성한 댓글이 없습니다."); break;}
+                    List<BoardVO> myList= board.searchBoard();
+                    List<BoardVO> myGoodList= board.goodBoardList();
+                    List<BoardVO> myBadList= board.badBoardList();
+                    if(myList.isEmpty() & myGoodList.isEmpty() & myBadList.isEmpty()) {
+                        System.out.println("댓글이 존재하지 않습니다.");
+                        continue;
+                    }
+                    System.out.println("=".repeat(30));
+                    System.out.println("[ 작성한 댓글 ]");
+                    if(myList.isEmpty()) System.out.println("작성한 댓글이 없습니다.");
+                    else board.printMyContent(myList);
+
+                    System.out.println("=".repeat(30));
+                    System.out.println("[ 추천한 댓글 ]");
+                    if(myGoodList.isEmpty()) System.out.println("추천한 댓글이 없습니다.");
+                    else board.printMyGoodContent(myGoodList);
+
+                    System.out.println("=".repeat(30));
+                    System.out.println("[ 비추천한 댓글 ]");
+                    if(myBadList.isEmpty()) System.out.println("비추천한 댓글이 없습니다.");
+                    else board.printMyBadContent(myBadList);
+
                     while (true) {
-                        System.out.println("[1]수정 [2]삭제 [3]돌아가기");
+                        System.out.println("[1]수정 [2]댓글삭제 [3] 추천/비추천취소 [4]돌아가기");
                         int sel8 = sc.nextInt();
                         switch (sel8) {
                             case 1: // 수정
+                                if(myList.isEmpty()) {
+                                    System.out.println("작성한 댓글이 없습니다.");
+                                    continue;
+                                }
                                 System.out.print("수정할 글번호를 입력하세요 : ");
                                 int num = sc.nextInt();
-                                if (!board.checkMyContent(num)) break;
+                                if (!board.checkMyContent(num)) {
+                                    System.out.println("내가 작성한 댓글이 존재하지 않습니다.");
+                                    continue;
+                                }
                                 while (true) {
                                     System.out.print("수정할 내용 : ");
                                     String content = sc.nextLine().trim();
@@ -338,14 +360,40 @@ public class Main {
                                 }
                                 break;
                             case 2: // 삭제
-                                System.out.print("삭제할 글번호를 입력하세요 : ");
+                                if(myList.isEmpty()) {
+                                    System.out.println("작성한 댓글이 없습니다.");
+                                    continue;
+                                }
+                                System.out.print("삭제 할 글번호를 입력하세요 : ");
                                 int num1 = sc.nextInt();
-                                if (!board.checkMyContent(num1)) break;
+                                if (!board.checkMyContent(num1)) {
+                                    System.out.println("내가 작성한 댓글이 존재하지 않습니다.");
+                                    continue;
+                                }
                                 board.deleteContent(num1);
                                 board.deleteBad(num1);
                                 board.deleteGood(num1);
                                 break;
-                            case 3: break;
+                            case 3: // 추천/비추천 취소
+                                if(myGoodList.isEmpty() & myBadList.isEmpty()) {
+                                    System.out.println("취소할 댓글이 없습니다.");
+                                    continue;
+                                }
+                                System.out.print("추천/비추천을 취소할 글번호를 입력하세요 : ");
+                                int num2 = sc.nextInt();
+                                if (!board.checkCommentGood(num2)) {
+                                    board.deleteMyGood(num2);
+                                    board.updateGoodBoard(num2, board.checkGood(num2));
+                                    System.out.println("추천을 취소하였습니다. ");
+                                }
+                                else if(!board.checkCommentBad(num2)) {
+                                    board.deleteBad(num2);
+                                    board.updateBadBoard(num2, board.checkBad(num2));
+                                    System.out.println("비추천을 취소하였습니다. ");
+                                }
+                                else System.out.println("취소할 댓글이 존재하지 않습니다.");
+                                break;
+                            case 4: break;
                             default:
                                 continue;
                         }
