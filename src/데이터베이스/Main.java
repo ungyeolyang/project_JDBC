@@ -157,7 +157,6 @@ public class Main {
                     String str = null;
                     while (true) {
                         System.out.print("영양제 이름을 입력하세요 : ");
-                        sc.nextLine();
                         String name1 = sc.nextLine().trim();
                         if (name1.isEmpty()) {System.out.println("이름을 입력하세요.");continue;}
                         str = board.checkNut(name1);
@@ -170,12 +169,15 @@ public class Main {
                     List<BoardVO> list= board.boardList(str);
                     board.printBoard(voN,set1,list);
                     while (true) {
-                        if(board.searchBoard(str)) {
-                            System.out.println("[1]댓글쓰기, [2]돌아가기");
+                        System.out.println("[1]댓글쓰기 [2]추천하기 [3] 신고하기 [4]돌아가기");
                             int sel3 = sc.nextInt();
                             sc.nextLine();
                             switch (sel3) {
                                 case 1:
+                                    if(!board.checkMine(str)) {
+                                        System.out.println("이미 작성한 댓글입니다.");
+                                        continue;
+                                    }
                                     while (true) {
                                         System.out.print("댓글 : ");
                                         String content = sc.nextLine().trim();
@@ -188,13 +190,40 @@ public class Main {
                                     }
                                     break;
                                 case 2:
+                                    if(!board.checkComment(str)) continue;
+                                    else if(!board.checkMine(str)) {
+                                        System.out.println("본인이 작성한 댓글입니다.");
+                                        continue;
+                                    }
+                                    System.out.print("추천할 번호를 입력하세요 : ");
+                                    int goodnum =sc.nextInt();
+                                    if(!board.checkCommentGood(goodnum)) continue;
+                                    else if(!board.checkComment(goodnum,str)) continue;
+                                    else board.commentGood(goodnum);
+                                    board.updateGoodBoard(board.checkGood(goodnum),goodnum);
+                                    break;
+                                case 3:
+                                    if(!board.checkComment(str)) continue;
+                                    else if(!board.checkMine(str)) {
+                                        System.out.println("본인이 작성한 댓글입니다.");
+                                        continue;
+                                    }
+                                    System.out.print("신고할 번호를 입력하세요 : ");
+                                    int badnum =sc.nextInt();
+                                    if(!board.checkCommentBad(badnum)) continue;
+                                    else if(!board.checkComment(badnum,str)) continue;
+                                    else board.commentBad(badnum);
+                                    board.updateBadBoard(board.checkBad(badnum),badnum);
+                                    if(board.checkBad(badnum) > 2) {
+                                        board.deleteBad(badnum);
+                                        System.out.println("신고누적으로 댓글이 삭제되었습니다.");
+                                        board.deleteContent(badnum);
+                                    } // 신고 3번이면 삭제
+                                    break;
+                                case 4:
                                     break;
                                 default:
-                                    continue;
                             }
-                        }
-                        else System.out.println("[1]돌아가기");
-                        int sel3 = sc.nextInt();
                         break;
                     }
                     break;
@@ -313,6 +342,8 @@ public class Main {
                                 int num1 = sc.nextInt();
                                 if (!board.checkMyContent(num1)) break;
                                 board.deleteContent(num1);
+                                board.deleteBad(num1);
+                                board.deleteGood(num1);
                                 break;
                             case 3: break;
                             default:

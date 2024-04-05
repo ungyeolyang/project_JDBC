@@ -6,8 +6,52 @@
   <component name="ChangeListManager">
     <list default="true" id="14449bfe-5464-4065-b9b1-79db7b2c2316" name="Changes" comment="개인정보 출력시 주민등록번호 깔끔하게 출력">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/BoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/BoardDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/BoardVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/BoardVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/데이터베이스/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/데이터베이스/SearchIdDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/SearchIdDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/SearchDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/SearchDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/JdbcApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/common/Common.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/controller/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/dao/BoardDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/dao/MemberDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/dao/MyInfoDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/dao/SearchDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/vo/BoardVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/vo/IngredientVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/vo/MemberVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/vo/NutrientsVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/java/com/kh/project/vo/SearchVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/comment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/delCheck.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/delComment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/delMyInfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/loginFail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/modComment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/modFail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/myComment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/myInfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/myInfoModName.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/myInfoModNick.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/myInfoModPw.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/myPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/nutrientsBoard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/nutrientsList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/regist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/registFail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/registRst.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/searchEf.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/searchFail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/searchIn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/searchNu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/searchNuFail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/select.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/main/resources/templates/thymeleafEx/start.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/src/test/java/com/kh/jdbc/JdbcApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/타임리프/text" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +89,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Dev/work_java/jdbc_Thymeleaf",
+    "last_opened_file_path": "C:/Users/gameyang/IdeaProjects/project_JDBC",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -115,7 +159,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/데이터베이스/Main.java</url>
-          <line>260</line>
+          <line>289</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>

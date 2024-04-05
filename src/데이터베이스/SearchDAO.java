@@ -30,10 +30,6 @@ public class SearchDAO {
             }
 
             rs = stmt.executeQuery(query);
-            if (!rs.next()) {
-                System.out.println("검색결과가 존재하지 않습니다.");
-                return set;
-            }
 
             while (rs.next()) {
                 String nutrientsName = rs.getString("NUTRIENTS_NAME");
@@ -51,6 +47,11 @@ public class SearchDAO {
 
                 set.add(vo);
             }
+            if (set.isEmpty()) {
+                System.out.println("검색결과가 존재하지 않습니다.");
+                return set;
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

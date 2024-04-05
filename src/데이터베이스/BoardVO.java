@@ -1,11 +1,31 @@
 package 데이터베이스;
 
+import java.security.PrivateKey;
+
 public class BoardVO {
     private String commentNo;
     private String nutrientsName;
     private String userId;
     private String content;
     private String userNick;
+    private int good;
+    private int bad;
+
+    public int getGood() {
+        return good;
+    }
+
+    public void setGood(int good) {
+        this.good = good;
+    }
+
+    public int getBad() {
+        return bad;
+    }
+
+    public void setBad(int bad) {
+        this.bad = bad;
+    }
 
     public String getCommentNo() {
         return commentNo;
