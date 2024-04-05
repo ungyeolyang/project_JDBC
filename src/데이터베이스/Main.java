@@ -216,6 +216,7 @@ public class Main {
                                     board.updateBadBoard(board.checkBad(badnum),badnum);
                                     if(board.checkBad(badnum) > 2) {
                                         board.deleteBad(badnum);
+                                        board.deleteGood(badnum);
                                         System.out.println("신고누적으로 댓글이 삭제되었습니다.");
                                         board.deleteContent(badnum);
                                     } // 신고 3번이면 삭제

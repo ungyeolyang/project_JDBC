@@ -292,6 +292,40 @@ public class BoardDAO {
         Common.close(stmt);
         Common.close(conn);
     }
+    public void deleteBadAll(){
+        String query = "DELETE FROM BADBOARD WHERE USER_ID = '" + Main.myId+"'";
+
+        try {
+            conn = Common.getConnection();
+            stmt = conn.createStatement();
+
+            int ret = stmt.executeUpdate(query);
+            System.out.println("Return : " + ret);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Common.close(stmt);
+        Common.close(conn);
+    }
+    public void deleteGoodAll(){
+        String query = "DELETE FROM GOODBOARD WHERE USER_ID = '" + Main.myId+"'";
+
+        try {
+            conn = Common.getConnection();
+            stmt = conn.createStatement();
+
+            int ret = stmt.executeUpdate(query);
+            System.out.println("Return : " + ret);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Common.close(stmt);
+        Common.close(conn);
+    }
     public String checkNut(String name){
         List<String> list = new ArrayList<>();
         String str = null;
@@ -538,6 +572,7 @@ public class BoardDAO {
         Common.close(conn);
     }
     void printBoard(NutrientsVO vo, HashSet<String> set, List<BoardVO> list) {
+        BoardDAO board = new BoardDAO();
         System.out.println(vo.getNutrientsName());
         System.out.println("=".repeat(10));
         if(vo.getIngredientB() != null) System.out.println("성분 : " + vo.getIngredientA() + ", " + vo.getIngredientB());
@@ -548,14 +583,21 @@ public class BoardDAO {
         if(!list.isEmpty()) {
             for (BoardVO e : list) {
                 System.out.println("=".repeat(30));
+                int cnum = Integer.parseInt(e.getCommentNo());
+                board.updateBadBoard(cnum,board.checkBad(cnum));
+                board.updateGoodBoard(cnum,board.checkGood(cnum));
                 System.out.println(e.getCommentNo() +"/" + e.getUserNick() + "(" + e.getUserId() + ") : " + e.getContent() + " / 좋아요 : " + e.getGood() +" / 싫어요 : " + e.getBad());
             }
         }
     }
     void printMyContent(List<BoardVO> list) {
+        BoardDAO board = new BoardDAO();
         for (BoardVO e : list) {
             System.out.println("=".repeat(30));
-            System.out.println(e.getCommentNo()+" / " + e.getNutrientsName() +" : " + e.getContent());
+            int cnum = Integer.parseInt(e.getCommentNo());
+            board.updateBadBoard(cnum,board.checkBad(cnum));
+            board.updateGoodBoard(cnum,board.checkGood(cnum));
+            System.out.println(e.getCommentNo() +"/" + e.getUserNick() + "(" + e.getUserId() + ") : " + e.getContent() + " / 좋아요 : " + e.getGood() +" / 싫어요 : " + e.getBad());
         }
     }
 }

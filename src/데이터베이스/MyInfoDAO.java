@@ -76,6 +76,7 @@ public class MyInfoDAO {
         Common.close(conn);
     }
     void deleteMyInfo() {
+        BoardDAO board = new BoardDAO();
         try {
             conn = Common.getConnection();
             stmt = conn.createStatement();
@@ -85,6 +86,8 @@ public class MyInfoDAO {
             String query1 = "DELETE FROM BOARD WHERE USER_ID = '" + Main.myId + "'";
             int ret1 = stmt.executeUpdate(query1);
             System.out.println("Return : " + ret1);
+            board.deleteBadAll();
+            board.deleteGoodAll();
 
         } catch (Exception e) {
             e.printStackTrace();
