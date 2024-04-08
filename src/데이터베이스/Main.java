@@ -169,7 +169,7 @@ public class Main {
                     TreeSet<BoardVO> set2= board.boardList(str);
                     board.printBoard(voN,set1,set2);
                     while (true) {
-                        System.out.println("[1]댓글쓰기 [2]추천하기 [3] 비추천하기 [4]찜하기 [5]돌아가기");
+                        System.out.println("[1]댓글쓰기 [2]댓글 추천하기 [3]댓글 비추천하기 [4]찜하기 [5]돌아가기");
                             int sel3 = sc.nextInt();
                             sc.nextLine();
                             switch (sel3) {
