@@ -34,6 +34,30 @@ public class BoardDAO {
         Common.close(conn);
         return true;
     }
+    public boolean checkMine(int num) {
+        String query = "SELECT USER_ID FROM BOARD WHERE COMMENT_NO = '" + num + "'";
+        String mine = null;
+        try {
+            conn = Common.getConnection();
+            stmt = conn.createStatement();
+
+            rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                mine = rs.getString("USER_ID");
+            }
+            if (mine == null) return true;
+            else if (mine.equals(Main.myId)) {
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Common.close(rs);
+        Common.close(stmt);
+        Common.close(conn);
+        return true;
+    }
 
     public boolean checkComment(String str) {
         String query = "SELECT USER_ID FROM BOARD WHERE NUTRIENTS_NAME = '" + str + "'";

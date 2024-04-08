@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14449bfe-5464-4065-b9b1-79db7b2c2316" name="Changes" comment="추천,신고, 신고누적 3번이면 삭제, 본인 글에는 제한">
+    <list default="true" id="14449bfe-5464-4065-b9b1-79db7b2c2316" name="Changes" comment="댓글 좋아요순으로 정렬">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/데이터베이스/BoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/BoardDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/데이터베이스/BoardVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/BoardVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/데이터베이스/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712326966212</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="댓글 좋아요순으로 정렬">
+      <option name="closed" value="true" />
+      <created>1712544371382</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712544371382</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,7 +144,8 @@
     <MESSAGE value="회원탈퇴시 쓴 댓글도 삭제하도록 변경" />
     <MESSAGE value="개인정보 출력시 주민등록번호 깔끔하게 출력" />
     <MESSAGE value="추천,신고, 신고누적 3번이면 삭제, 본인 글에는 제한" />
-    <option name="LAST_COMMIT_MESSAGE" value="추천,신고, 신고누적 3번이면 삭제, 본인 글에는 제한" />
+    <MESSAGE value="댓글 좋아요순으로 정렬" />
+    <option name="LAST_COMMIT_MESSAGE" value="댓글 좋아요순으로 정렬" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

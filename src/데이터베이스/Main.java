@@ -191,30 +191,22 @@ public class Main {
                                     break;
                                 case 2:
                                     if(!board.checkComment(str)) continue;
-                                    else if(!board.checkMine(str)) {
-                                        System.out.println("본인이 작성한 댓글입니다.");
-                                        continue;
-                                    }
                                     System.out.print("추천할 번호를 입력하세요 : ");
                                     int goodnum =sc.nextInt();
                                     if(!board.checkCommentGood(goodnum)) {System.out.println("이미 추천한 댓글입니다."); continue;}
-                                    else if(!board.checkComment(goodnum,str)) continue;
+                                    else if(!board.checkMine(goodnum)) continue;
                                     else board.commentGood(goodnum);
                                     board.updateGoodBoard(goodnum,board.checkGood(goodnum));
                                     break;
                                 case 3:
                                     if(!board.checkComment(str)) continue;
-                                    else if(!board.checkMine(str)) {
-                                        System.out.println("본인이 작성한 댓글입니다.");
-                                        continue;
-                                    }
                                     System.out.print("비추천할 번호를 입력하세요 : ");
                                     int badnum =sc.nextInt();
                                     if(!board.checkCommentBad(badnum)) {
                                         System.out.println("이미 비추천한 댓글입니다.");
                                         continue;
                                     }
-                                    else if(!board.checkComment(badnum,str)) continue;
+                                    else if(!board.checkMine(badnum)) continue;
                                     else board.commentBad(badnum);
                                     board.updateBadBoard(badnum,board.checkBad(badnum));
                                     if(board.checkBad(badnum) > 2) {
