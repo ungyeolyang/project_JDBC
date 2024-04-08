@@ -169,7 +169,7 @@ public class Main {
                     TreeSet<BoardVO> set2= board.boardList(str);
                     board.printBoard(voN,set1,set2);
                     while (true) {
-                        System.out.println("[1]댓글쓰기 [2]추천하기 [3] 신고하기 [4]돌아가기");
+                        System.out.println("[1]댓글쓰기 [2]추천하기 [3] 비추천하기 [4]찜하기 [5]돌아가기");
                             int sel3 = sc.nextInt();
                             sc.nextLine();
                             switch (sel3) {
@@ -217,6 +217,13 @@ public class Main {
                                     } // 신고 3번이면 삭제
                                     break;
                                 case 4:
+                                    if(board.checkWish(str) != 0) {
+                                        System.out.println("이미 찜한 상품입니다.");
+                                        continue;
+                                    }
+                                    else board.wishIn(str);
+                                    break;
+                                case 5:
                                     break;
                                 default:
                             }
@@ -236,7 +243,7 @@ public class Main {
             System.out.println("┌" + "- ".repeat(myNickName.length() + 7) + "-" + "┐");
             System.out.println("│    " + myNickName + "님의 페이지   │");
             System.out.println("└" + "- ".repeat(myNickName.length() + 7) + "-" + "┘");
-            System.out.println("[1]내정보 [2]작성한 댓글 [3]돌아가기");
+            System.out.println("[1]내정보 [2]작성한 댓글 [3]찜목록 [4]돌아가기");
             int sel4 = sc.nextInt();
             switch (sel4) {
                 case 1: // 내정보
@@ -248,7 +255,7 @@ public class Main {
                         int sel5 = sc.nextInt();
                         switch (sel5) {
                             case 1: // 수정
-                                System.out.println("[1]이름 [2]비밀번호 [3]닉네임  [4]돌아가기");
+                                System.out.println("[1]이름 [2]비밀번호 [3]닉네임 [4]돌아가기");
                                 int sel6 = sc.nextInt();
                                 switch (sel6) {
                                     case 1:
@@ -300,7 +307,7 @@ public class Main {
                         }
                         break;
                     }
-                    continue;
+                    break;
                 case 2: // 작성한 댓글
                     BoardDAO board = new BoardDAO();
                     List<BoardVO> myList= board.searchBoard();
@@ -379,7 +386,7 @@ public class Main {
                                     System.out.println("추천을 취소하였습니다. ");
                                 }
                                 else if(!board.checkCommentBad(num2)) {
-                                    board.deleteMyBad(num2);
+                                    board.deleteBad(num2);
                                     board.updateBadBoard(num2, board.checkBad(num2));
                                     System.out.println("비추천을 취소하였습니다. ");
                                 }
@@ -391,8 +398,39 @@ public class Main {
                         }
                         break;
                     }
-                    continue;
+                    break;
                 case 3:
+                    BoardDAO boardDAO = new BoardDAO();
+                    SearchDAO searchDAO = new SearchDAO();
+                    if(boardDAO.wishList().isEmpty()) continue;
+                    searchDAO.printNutrients(boardDAO.wishList());
+                    while (true) {
+                        System.out.println("[1]찜취소 [2]돌아가기");
+                        int sel9 = sc.nextInt();
+                        switch (sel9) {
+                            case 1: // 취소
+                                System.out.print("취소할 영양제 이름을 입력하세요 : ");
+                                sc.nextLine();
+                                String name = sc.nextLine();
+                                if(boardDAO.checkWish(name) == 2) {
+                                    System.out.println("검색결과가 2개 이상 존재합니다. 정확한 이름을 입력해 주세요");
+                                    continue;
+                                }
+                                else if(boardDAO.checkWish(name) == 0){
+                                    System.out.println("검색결과가 존재하지 않습니다. 정확한 이름을 입력해 주세요");
+                                    continue;
+                                }
+                                else boardDAO.deleteWish(name);
+                                break;
+                            case 2: // 돌아가기
+                                break;
+                            default:
+                                continue;
+                        }
+                        break;
+                    }
+                    break;
+                case 4:
                     break;
                 default:
             }

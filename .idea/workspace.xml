@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14449bfe-5464-4065-b9b1-79db7b2c2316" name="Changes" comment="댓글 좋아요순으로 정렬">
+    <list default="true" id="14449bfe-5464-4065-b9b1-79db7b2c2316" name="Changes" comment="추천,신고, 신고누적 3번이면 삭제, 본인 글에는 제한">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/BoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/BoardDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/데이터베이스/MyInfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/데이터베이스/MyInfoDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,23 +36,23 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Dev/work_java/project_JDBC",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gameyang/IdeaProjects/project_JDBC&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="데이터베이스" />
@@ -118,34 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712326966212</updated>
     </task>
-    <task id="LOCAL-00005" summary="댓글 좋아요순으로 정렬">
-      <option name="closed" value="true" />
-      <created>1712544371382</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1712544371382</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="회원탈퇴시 쓴 댓글도 삭제하도록 변경" />
     <MESSAGE value="개인정보 출력시 주민등록번호 깔끔하게 출력" />
     <MESSAGE value="추천,신고, 신고누적 3번이면 삭제, 본인 글에는 제한" />
-    <MESSAGE value="댓글 좋아요순으로 정렬" />
-    <option name="LAST_COMMIT_MESSAGE" value="댓글 좋아요순으로 정렬" />
+    <option name="LAST_COMMIT_MESSAGE" value="추천,신고, 신고누적 3번이면 삭제, 본인 글에는 제한" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -157,7 +140,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/데이터베이스/BoardDAO.java</url>
-          <line>63</line>
+          <line>68</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
