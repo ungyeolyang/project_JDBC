@@ -84,6 +84,7 @@ public class MyInfoDAO {
             System.out.println("Return : " + ret1);
             board.deleteBadAll();
             board.deleteGoodAll();
+            board.deleteWishALL();
 
         } catch (Exception e) {
             e.printStackTrace();
