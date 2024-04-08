@@ -2,7 +2,7 @@ package 데이터베이스;
 
 import java.security.PrivateKey;
 
-public class BoardVO {
+public class BoardVO implements Comparable<BoardVO>{
     private String commentNo;
     private String nutrientsName;
     private String userId;
@@ -65,5 +65,11 @@ public class BoardVO {
 
     public void setCommentNo(String commentNo) {
         this.commentNo = commentNo;
+    }
+
+    @Override
+    public int compareTo(BoardVO o) {
+        if (this.good < o.good) return -1;
+        else return 1;
     }
 }

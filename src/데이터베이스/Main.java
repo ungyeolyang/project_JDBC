@@ -166,8 +166,8 @@ public class Main {
                     }
                     NutrientsVO voN = board.boardNut(str);
                     HashSet<String> set1 = board.boardEFF(str);
-                    List<BoardVO> list= board.boardList(str);
-                    board.printBoard(voN,set1,list);
+                    TreeSet<BoardVO> set2= board.boardList(str);
+                    board.printBoard(voN,set1,set2);
                     while (true) {
                         System.out.println("[1]댓글쓰기 [2]추천하기 [3] 신고하기 [4]돌아가기");
                             int sel3 = sc.nextInt();
@@ -256,7 +256,7 @@ public class Main {
                         int sel5 = sc.nextInt();
                         switch (sel5) {
                             case 1: // 수정
-                                System.out.println("[1]이름, [2]비밀번호,[3]닉네임, [4]주민등록번호 [5]돌아가기");
+                                System.out.println("[1]이름 [2]비밀번호 [3]닉네임  [4]돌아가기");
                                 int sel6 = sc.nextInt();
                                 switch (sel6) {
                                     case 1:
@@ -387,7 +387,7 @@ public class Main {
                                     System.out.println("추천을 취소하였습니다. ");
                                 }
                                 else if(!board.checkCommentBad(num2)) {
-                                    board.deleteBad(num2);
+                                    board.deleteMyBad(num2);
                                     board.updateBadBoard(num2, board.checkBad(num2));
                                     System.out.println("비추천을 취소하였습니다. ");
                                 }

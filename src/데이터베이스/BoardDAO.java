@@ -3,10 +3,7 @@ package 데이터베이스;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class BoardDAO {
     Connection conn = null;
@@ -432,8 +429,8 @@ public class BoardDAO {
         return set;
     }
 
-    public List<BoardVO> boardList(String str) {
-        List<BoardVO> list = new ArrayList<>();
+    public TreeSet<BoardVO> boardList(String str) {
+        TreeSet<BoardVO> set = new TreeSet<>();
         try {
             conn = Common.getConnection();
             stmt = conn.createStatement();
@@ -458,7 +455,7 @@ public class BoardDAO {
                 voB.setGood(good);
                 voB.setBad(bad);
 
-                list.add(voB);
+                set.add(voB);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -467,7 +464,7 @@ public class BoardDAO {
         Common.close(rs);
         Common.close(stmt);
         Common.close(conn);
-        return list;
+        return set;
     }
     public List<BoardVO> goodBoardList() {
         List<BoardVO> list = new ArrayList<>();
@@ -672,7 +669,7 @@ public class BoardDAO {
         Common.close(conn);
     }
 
-    void printBoard(NutrientsVO vo, HashSet<String> set, List<BoardVO> list) {
+    void printBoard(NutrientsVO vo, HashSet<String> set, TreeSet<BoardVO> set1) {
         System.out.println(vo.getNutrientsName());
         System.out.println("=".repeat(10));
         if (vo.getIngredientB() != null) System.out.println("성분 : " + vo.getIngredientA() + ", " + vo.getIngredientB());
@@ -680,8 +677,8 @@ public class BoardDAO {
         System.out.println("효능 : " + set.toString().replace("[", "").replace("]", ""));
         System.out.println("제조사 : " + vo.getCompany());
         System.out.println("복용법 : " + vo.getHowToTake() + " ");
-        if (!list.isEmpty()) {
-            for (BoardVO e : list) {
+        if (!set.isEmpty()) {
+            for (BoardVO e : set1) {
                 System.out.println("=".repeat(30));
                 System.out.println(e.getCommentNo() + " / " + e.getUserNick() + "(" + e.getUserId() + ") : " + e.getContent() + " / 좋아요 : " + e.getGood() + " / 싫어요 : " + e.getBad());
             }
